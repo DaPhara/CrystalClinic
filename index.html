@@ -105,17 +105,36 @@
           </div>
         </a>
 
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Specialties</a></li>
-          <li><a href="#doctor">Dr. Mam Kim Eng</a></li>
-          <li><a href="#why-us">Why Us</a></li>
-          <li><a href="#journey">Patient Care</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
+        <!-- Pure CSS Mobile Menu Checkbox Toggle -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle navigation">
 
-        <div class="nav-cta-wrap">
-          <a href="#consultation" class="btn btn-primary btn-sm">Book Consultation</a>
+        <!-- Navigation Links Drawer -->
+        <div class="nav-menu-wrapper" id="navMenu">
+          <ul class="nav-links">
+            <li><a href="#about" class="nav-link-item">About</a></li>
+            <li><a href="#services" class="nav-link-item">Specialties</a></li>
+            <li><a href="#doctor" class="nav-link-item">Dr. Mam Kim Eng</a></li>
+            <li><a href="#why-us" class="nav-link-item">Why Us</a></li>
+            <li><a href="#journey" class="nav-link-item">Patient Care</a></li>
+            <li><a href="#faq" class="nav-link-item">FAQ</a></li>
+          </ul>
+          <div class="nav-drawer-footer">
+            <div class="drawer-contact-info">
+              <div><a href="tel:+85577656263">📞 +855 77 656 263</a></div>
+              <div>📍 Khan Sen Sok, Phnom Penh</div>
+            </div>
+            <a href="#consultation" class="btn btn-primary btn-drawer nav-link-item">Book Private Consultation</a>
+          </div>
+        </div>
+
+        <!-- Desktop Action & Mobile Hamburger Button -->
+        <div class="nav-actions-group">
+          <a href="#consultation" class="btn btn-primary btn-sm desktop-only-cta">Book Consultation</a>
+          <label for="nav-toggle" class="menu-toggle-btn" aria-label="Toggle menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </label>
         </div>
       </nav>
     </div>
@@ -1057,6 +1076,16 @@
       <span>Telegram</span>
     </a>
   </div>
+
+  <!-- Mobile Drawer Auto-Close Interaction -->
+  <script>
+    document.querySelectorAll('.nav-link-item').forEach(function(item) {
+      item.addEventListener('click', function() {
+        var toggle = document.getElementById('nav-toggle');
+        if (toggle) { toggle.checked = false; }
+      });
+    });
+  </script>
 
 </body>
 </html>
